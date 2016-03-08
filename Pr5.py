@@ -58,10 +58,10 @@ valid = (valid[0],linit(valid[1]))
 #test  = (test[0] ,linit(test[1]))
 
 
+#first
 cnet = theanets.Classifier([8,2,2])
 cnet.train(train,valid, algo='layerwise', patience=1, max_updates=mupdates)
 cnet.train(train,valid, algo='rprop', patience=1, max_updates=mupdates)
-
 
 print "%s / %s " % (sum(cnet.classify(inputs) == outputs),len(outputs))
 classify = cnet.classify(valid[0])
@@ -69,3 +69,24 @@ print "%s / %s " % (sum(classify == valid[1]),len(valid[1]))
 print collections.Counter(classify)
 print theautil.classifications(classify,valid[1])
 
+#Second
+cnet = theanets.Classifier([8,4,8,2])
+cnet.train(train,valid, algo='layerwise', patience=1, max_updates=mupdates)
+cnet.train(train,valid, algo='rprop', patience=1, max_updates=mupdates)
+
+print "%s / %s " % (sum(cnet.classify(inputs) == outputs),len(outputs))
+classify = cnet.classify(valid[0])
+print "%s / %s " % (sum(classify == valid[1]),len(valid[1]))
+print collections.Counter(classify)
+print theautil.classifications(classify,valid[1])
+
+#Third
+cnet = theanets.Classifier([8,2,2])
+cnet.train(train,valid, algo='layerwise', patience=1, max_updates=mupdates)
+cnet.train(train,valid, algo='rprop', patience=1, max_updates=mupdates)
+
+print "%s / %s " % (sum(cnet.classify(inputs) == outputs),len(outputs))
+classify = cnet.classify(valid[0])
+print "%s / %s " % (sum(classify == valid[1]),len(valid[1]))
+print collections.Counter(classify)
+print theautil.classifications(classify,valid[1])
