@@ -81,7 +81,7 @@ print collections.Counter(classify)
 print theautil.classifications(classify,valid[1])
 
 #Third
-cnet = theanets.Classifier([8,2,2])
+cnet = theanets.Classifier([8,6,5,8,2])
 cnet.train(train,valid, algo='layerwise', patience=1, max_updates=mupdates)
 cnet.train(train,valid, algo='rprop', patience=1, max_updates=mupdates)
 
